@@ -1,0 +1,101 @@
+.page {
+	.top-bg {
+		width: 100%;
+		height: 400rpx;
+	}
+	.screen-swiper {
+		min-height: 360rpx;
+	}
+	.swiper-banner {
+		width: 94%;
+		margin: -230rpx auto auto;
+	}
+	.tag-list {
+		width: 100%;
+		margin: 30rpx auto;
+		text-align: center;
+		.tag-image {
+			height: 35rpx;
+			width: 300rpx;
+		}
+	}
+	.rank-list {
+		width: 94%;
+		margin: auto;
+		.work-item:nth-child(n + 2) {
+			margin-top: 15rpx;
+		}
+		.work-item {
+			width: 100%;
+			.top-name {
+				height: 130rpx;
+				padding: 25rpx;
+				@include center;
+				.left-head {
+					height: 90rpx;
+					width: 90rpx;
+					border-radius: 50%;
+				}
+				.right-list {
+					flex: 1;
+					padding-left: 20rpx;
+					.name {
+						font-weight: 1000;
+						color: #333333;
+						font-size: 34rpx;
+					}
+					.user-tag {
+						view:nth-child(1) {
+							padding-right: 10rpx;
+							position: relative;
+							color: #666666;
+						}
+						view:nth-child(n + 2) {
+							padding-left: 10rpx;
+							position: relative;
+							color: #666666;
+						}
+						view:nth-child(n + 2)::before {
+							content: '';
+							height: 25rpx;
+							width: 3rpx;
+							top: 4px;
+							left: 0;
+							background-color: #cccccc;
+							position: absolute;
+						}
+					}
+				}
+			}
+			.bottom-picture {
+				@include center;
+				justify-content: space-around;
+				padding-bottom: 15rpx;
+				.moka-image {
+					width: 96%;
+					height: 300rpx;
+				}
+			}
+			.tags-list {
+				padding: 20rpx;
+				display: flex;
+				flex-wrap: wrap;
+				.cu-tag {
+					margin-bottom: 10rpx;
+					font-weight: 1000;
+				}
+			}
+		}
+	}
+	.work-list {
+		width: 96%;
+		margin: auto;
+	}
+}
+.more-list {
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	margin-top: 15rpx;
+	color: gray;
+}

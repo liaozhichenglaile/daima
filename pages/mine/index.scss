@@ -1,0 +1,107 @@
+.icon-sm {
+	height: 40rpx;
+	width: 40rpx;
+}
+.userinfo {
+	height: 500rpx;
+	background-image: url('https://mx.aihuobao.cn/mini/mine_bg.png');
+	width: 100%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	@include center-s(center);
+	.user-avatar {
+		margin-top: 140rpx;
+		height: 170rpx;
+		width: 170rpx;
+		border-radius: 50%;
+		border: 5rpx solid #b3dfb3;
+		overflow: hidden;
+		image{
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.user-name {
+		color: #ffffff;
+		font-size: 34rpx;
+		overflow: hidden;
+	}
+}
+.usermenu {
+	height: 310rpx;
+	width: 100%;
+	.content {
+		width: 80%;
+		margin: auto;
+		@include center-s(center);
+		.cu-btn {
+			width: 100%;
+		}
+		.menu {
+			width: 100%;
+			.nav {
+				flex: 1;
+				position: relative;
+				text-align: center;
+				.count {
+					font-size: 40rpx;
+					color: #000;
+				}
+				.name {
+					margin-top: 5rpx;
+					color: gray;
+					font-size: 26rpx;
+				}
+			}
+			.nav:nth-child(2)::after {
+				content: '';
+				width: 3rpx;
+				right: 0;
+				top: 25rpx;
+				height: 50rpx;
+				background-color: #cccccc;
+				position: absolute;
+			}
+			.nav:nth-child(2)::before {
+				content: '';
+				width: 3rpx;
+				left: 0;
+				top: 25rpx;
+				height: 50rpx;
+				background-color: #cccccc;
+				position: absolute;
+			}
+		}
+	}
+}
+.nav-menu {
+	width: 94%;
+	margin: 30rpx auto;
+	border-radius: 12rpx;
+	padding: 15rpx 30rpx 30rpx;
+	.item {
+		height: 80rpx;
+		line-height: 80rpx;
+		@include center-h;
+		position: relative;
+		padding-top: 20rpx;
+		font-size: 34rpx;
+		color: #333333;
+		.icon-sm {
+			height: 50rpx;
+			width: 50rpx;
+		}
+		.right {
+			position: absolute;
+			right: 0rpx;
+		}
+		.name {
+			padding-top: 10rpx;
+		}
+	}
+	.item:nth-child(n + 2) {
+		padding-top: 20rpx;
+		margin-top: 20rpx;
+		border-top: 1rpx solid #f1f1f1;
+	}
+}

@@ -1,0 +1,149 @@
+.userinfo {
+	@include center;
+	background-color: #34b630;
+	color: #ffffff;
+	.headimg {
+		height: 160rpx;
+		width: 160rpx;
+		border-radius: 50%;
+		border: 5rpx solid #b3dfb3;
+	}
+	.basic-info {
+		flex: 1;
+		padding-left: 20rpx;
+		.name {
+			font-weight: 1000;
+			font-size: 34rpx;
+		}
+		.user-tag {
+			margin-top: 8rpx;
+			margin-bottom: 8rpx;
+			view:nth-child(1) {
+				padding-right: 10rpx;
+				position: relative;
+				color: #FFF;
+			}
+			view:nth-child(n + 2) {
+				padding-left: 10rpx;
+				position: relative;
+				color: #FFF;
+			}
+			view:nth-child(n + 2)::before {
+				content: '';
+				height: 25rpx;
+				width: 3rpx;
+				top: 4px;
+				left: 0;
+				background-color: #cccccc;
+				position: absolute;
+			}
+		}
+	}
+	.action {
+		width: 180rpx;
+		.top-btn {
+			height: 55rpx;
+			text-align: center;
+			line-height: 55rpx;
+			background-color: #ffffff;
+			border-radius: 10rpx;
+			color: #34b630;
+			font-size: 30rpx;
+		}
+		.care-btn {
+			@extend .top-btn;
+			background-color: transparent;
+			color: #ffffff;
+			border: 1rpx solid;
+			margin-top: 25rpx;
+		}
+	}
+}
+.nav {
+	.cu-item {
+		margin: 0 130rpx;
+		font-size: 34rpx;
+		flex: 1;
+		position: relative;
+	}
+	.cu-item:nth-child(1)::after {
+		content: '';
+		width: 3rpx;
+		right: -125%;
+		top: 25rpx;
+		height: 50rpx;
+		background-color: #cccccc;
+		position: absolute;
+	}
+	.text-green {
+		font-weight: 1000;
+	}
+}
+.basic-item {
+	width: 95%;
+	border-radius: 12rpx;
+	margin: 30rpx auto;
+	min-height: 1030rpx;
+	position: relative;
+	.tag-title {
+		position: absolute;
+		width: 165rpx;
+		height: 55rpx;
+		margin-top: 40rpx;
+		color: #ffffff;
+		line-height: 55rpx;
+		text-align: center;
+		background-image: linear-gradient(0deg, #34b630 0%, #91d78e 100%);
+		border-radius: 0px 40px 40px 0px;
+	}
+	.item {
+		flex: 1;
+	}
+	.tag-titles {
+		@extend .tag-title;
+		margin-top: 250rpx;
+	}
+	.tag-titles-s {
+		@extend .tag-title;
+		margin-top: 460rpx;
+	}
+	.content {
+		position: absolute;
+		margin-top: 100rpx;
+		width: 100%;
+		padding: 25rpx;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.contents {
+		@extend .content;
+		margin-top: 310rpx;
+		.moka-image{
+			width: 100%;
+			height: 300rpx;
+		}
+	}
+	.contents-bot {
+		@extend .content;
+		margin-top: 365rpx;
+	}
+	.content-bot {
+		@extend .content;
+		margin-top: 155rpx;
+	}
+	.user-tags-list {
+		padding: 20rpx;
+		margin-top: 860rpx;
+		position: absolute;
+		display: flex;
+		flex-wrap: wrap;
+		.cu-tag {
+			margin-bottom: 10rpx;
+			font-weight: 1000;
+		}
+	}
+}
+.user-work {
+	margin-bottom: env(safe-area-inset-bottom);
+}
