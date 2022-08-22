@@ -3,6 +3,13 @@ import fun from './fun.js'
 /**
  * @param {Object} data sessionkey
  */
+export function geturl() {
+	//let baseUrl = "https://mx.aihuobao.cn/client_api"
+	//let baseUrl = "https://mt.aihuobao.cn/client_api"
+		let baseUrl = "https://xcx.mengxintonggao.cn/client_api"
+	return baseUrl;
+	}
+
 export function sessionkey(data) {
 	return fun('/user/session_key', data, 'POST')
 }
@@ -97,6 +104,14 @@ export function businessub(data) {
 /**
  * @param {Object} data 作品提交
  */
+export function paysub(data) {
+	return fun('/pay/pay', data, 'POST')
+}
+
+
+/**
+ * @param {Object} data 作品提交
+ */
 export function worksub(data) {
 	return fun('/artist/dynamic/save', data, 'POST')
 }
@@ -120,3 +135,6 @@ export function banner(data) {
 export function nominate(data) {
 	return fun('/artist/recommend', data, 'GET')
 }
+
+
+

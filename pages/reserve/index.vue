@@ -8,7 +8,7 @@
 		<view class="box-content bg-white radius">
 			<image
 				class="image"
-				src="https://mx.aihuobao.cn/mini/reserve_bg.png"
+				src="https://xcx.mengxintonggao.cn/mini/reserve_bg.png"
 				mode="aspectFill"
 			></image>
 			<form @submit="submit" @reset="formReset">

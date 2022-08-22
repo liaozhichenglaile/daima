@@ -29,16 +29,29 @@
 					<view class="left">
 						<image :src="item.cover_img" mode="aspectFill"></image>
 					</view>
+					
+					
 					<view class="right">
-						<view class="name">{{ item.stage_name }}</view>
+						
+						
+							<view class="name">{{ item.stage_name }}</view>
+						
+						
+					
+						
+		
 						<view class="user-tag flex">
 							<view>{{ item.city }}</view>
 							<view>模特</view>
 							<view>人气值:{{ item.fans_count + item.virtual_fans }}</view>
+					
 						</view>
 						<view class="time text-gray margin-top-sm margin-bottom-sm text-sm">
 							注册时间:{{ item.add_time }}
 						</view>
+					
+				
+						
 						<view class="tag-list"></view>
 						<view class="flex btn">
 							<view class="order" @click.stop="orderserver(item.uid)">预约服务</view>
@@ -48,7 +61,11 @@
 							>
 								{{ item.follow.id ? '已关注' : '关注TA' }}
 							</view>
+							
+							
 						</view>
+						<image v-if ="item.logo" class="icon-sm"    :src="'/static/index/'+item.logo+'.png'"></image>
+						<text  v-if ="item.logo"  class="icon-sms" >NO.{{item.logo}}</text>
 					</view>
 				</view>
 			</block>
@@ -80,10 +97,10 @@ export default {
 					name: '综合排序',
 					type: 'hierarchy',
 					submenu: [
-						{
-							name: '加入时间正序',
-							value: 'asc'
-						},
+						// {
+						// 	name: '加入时间正序',
+						// 	value: 'asc'
+						// },
 						{
 							name: '加入时间倒序',
 							value: 'desc'
@@ -91,11 +108,11 @@ export default {
 						{
 							name: '人气值高到低',
 							value: 'fans'
-						},
-						{
-							name: '作品数高到低',
-							value: 'works'
 						}
+						// {
+						// 	name: '作品数高到低',
+						// 	value: 'works'
+						// }
 					]
 				},
 				{
@@ -209,6 +226,7 @@ export default {
 				this.$util.$toast('没有更多艺人了');
 				this.stopload = true;
 			}
+			
 			this.starlist[this.where.page - 1] = list;
 			this.where.page += 1;
 		},
@@ -235,6 +253,7 @@ export default {
 			});
 		},
 		async followstar(artist_uid, index, id = 0) {
+			
 			if (this.starlist[index].follow && this.starlist[index].follow.id) {
 				await notfollow({ id });
 				this.starlist[index].follow = {};
@@ -245,6 +264,7 @@ export default {
 			}
 		},
 		bindsearch(e) {
+			
 			this.starlist = [];
 			this.where.page = 1;
 			this.where.name = e.detail.value;
@@ -252,10 +272,12 @@ export default {
 			this.getstarlist();
 		},
 		confirm(e) {
+			
 			this.starlist = [];
 			this.where.page = 1;
 			this.stopload = false;
 			let val = e.value;
+			console.log(val)
 			if (val[0][0] && ['asc', 'desc'].includes(val[0][0])) {
 				this.where.audit_time_sort = val[0][0];
 			} else if (val[0][0] && val[0][0] === 'fans') {
@@ -296,4 +318,26 @@ export default {
 
 <style scoped lang="scss">
 @import 'index.scss';
+.icon-sm {
+    position: relative;
+    height: 40rpx;
+    width: 40rpx;
+    left: 240rpx;
+    bottom: 270rpx;
+	
+
+}
+
+.icon-sms {
+   position: relative;
+    height: 40rpx;
+    width: 40rpx;
+    left: 245rpx;
+    bottom: 275rpx;
+	color: #21DBFF;
+
+}
+
+
+
 </style>

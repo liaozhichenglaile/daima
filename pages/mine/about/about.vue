@@ -8,7 +8,7 @@
 export default {
 	data() {
 		return {
-			url: ''
+			url: 'https://mp.weixin.qq.com/s/UpMFXqYURWxxeiKXb-hnhw'
 		};
 	},
 	onLoad(param) {

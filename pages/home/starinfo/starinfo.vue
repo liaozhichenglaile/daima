@@ -12,7 +12,7 @@
 					<view>{{ star.city || '' }}</view>
 					<view>人气值:{{ star.fans_count + star.virtual_fans || 0 }}</view>
 				</view>
-				<view class="time text-sm">注册时间:{{ star.audit_time || '' }}</view>
+				<view class="time text-sm">注册时间:{{ star.add_time || '' }}</view>
 			</view>
 			<view class="action">
 				<view class="top-btn" @click="orderstar(star.uid)">预约服务</view>

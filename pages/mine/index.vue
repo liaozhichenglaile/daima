@@ -60,6 +60,7 @@ export default {
 	data() {
 		return {
 			menu: [
+				{ u: 'zd', n: '我要置顶' },
 				{ u: 'works', n: '我的作品' },
 				{ u: 'about', n: '关于我们' },
 				{ u: 'concat', n: '联系我们' }
@@ -72,10 +73,14 @@ export default {
 	},
 	components: { Auth, Concat },
 	mounted() {
+		
+	
+		
 		this.setuser();
 		uni.$on('authuser', () => {
 			this.setuser();
 		});
+		
 		// 监听新增-取消关注
 		uni.$on('bindfollow', res => {
 			if (res === 1) {
@@ -84,6 +89,9 @@ export default {
 				this.user.follow_count += 1;
 			}
 		});
+		
+		
+	
 	},
 	methods: {
 		async setuser() {
@@ -96,6 +104,16 @@ export default {
 				this.isure = false;
 			}
 			this.user = res;
+			console.log(this.user)
+		if (!this.user.identity) {
+		this.menu= [
+				{ u: 'works', n: '我的作品' },
+				{ u: 'about', n: '关于我们' },
+				{ u: 'concat', n: '联系我们' }
+			];
+			
+		}
+			
 		},
 		subworks() {
 			uni.navigateTo({
@@ -103,11 +121,17 @@ export default {
 			});
 		},
 		menuto(index) {
+		if (!this.user.identity) {
+				index=index+1;
+				}
+			console.log(index)
+			
+			
 			if (this.isure) {
 				return (this.showauth = true);
 			}
 			switch (index) {
-				case 0:
+				case 1:
 					if (!this.user.identity) {
 						this.$util.$toast('请先加入成为艺人');
 					} else {
@@ -116,14 +140,19 @@ export default {
 						});
 					}
 					break;
-				case 1:
+				case 2:
 					uni.navigateTo({
 						url: '/pages/mine/about/about?source=mine&url='
 					});
 					break;
-				case 2:
+				case 3:
 					this.show = true;
 					break;
+				case 0:
+				uni.navigateTo({
+					url: '/pages/mine/topping/topping'
+				});
+				break;
 			}
 		}
 	}

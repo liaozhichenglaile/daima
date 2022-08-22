@@ -24,7 +24,7 @@ const $succ = (v, n = 1) => {
 }
 const $upload = async (arrs, url) => {
 	uni.showLoading({
-		title: '请求中',
+		title: '上传中',
 		mask: true
 	})
 	return new Promise(async (resolve, reject) => {
@@ -50,7 +50,7 @@ const $upload = async (arrs, url) => {
 const $image=(url)=>{
 	return new Promise((resolve)=>{
 		uni.uploadFile({
-			url:'https://mx.aihuobao.cn/client_api/assist/upload_img',
+			url:'https://xcx.mengxintonggao.cn/client_api/assist/upload_img',
 			filePath: url,
 			header: {
 				"content-type": "multipart/form-data",
@@ -58,6 +58,7 @@ const $image=(url)=>{
 			name: "file",
 			success: async (res) => {
 				let curr = JSON.parse(res.data);
+				console.log('这是curr',curr)
 				resolve(curr.data.url)
 			},
 			fail: () => {

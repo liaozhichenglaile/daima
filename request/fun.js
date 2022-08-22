@@ -1,5 +1,9 @@
+
+
 const fun = (url, param = {}, method) => {
-	let baseUrl = "https://mx.aihuobao.cn/client_api"
+	//let baseUrl = "https://mx.aihuobao.cn/client_api"
+	let baseUrl = "https://xcx.mengxintonggao.cn/client_api"
+//	let baseUrl = "https://mt.aihuobao.cn/client_api"
 
 	return new Promise((resolve, reject) => {
 		uni.request({

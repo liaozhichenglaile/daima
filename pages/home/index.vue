@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<scroll-view scroll-y class="page">
-			<image class="top-bg" src="https://mx.aihuobao.cn/mini/img_sy_gud_bg.png"></image>
+			<image class="top-bg" src="https://xcx.mengxintonggao.cn/mini/img_sy_gud_bg.png"></image>
 
 			<swiper
 				class="swiper-banner screen-swiper square-dot"
@@ -17,7 +17,7 @@
 					:key="index"
 					@click="jumpurl(item.jump_url)"
 				>
-					<image :src="item.img" mode="aspectFill"></image>
+					<image :src="item.img" mode="aspectFit"></image>
 				</swiper-item>
 			</swiper>
 			<view class="tag-list">
@@ -43,6 +43,8 @@
 								<view>人气值:{{ item.fans_count + item.virtual_fans }}</view>
 							</view>
 						</view>
+						<image v-if ="item.logo" class="icon-sm"    :src="'/static/index/'+item.logo+'.png'"></image>
+						<text  v-if ="item.logo"  class="icon-sms" >NO.{{item.logo}}</text>	
 					</view>
 
 					<view class="bottom-picture">
@@ -144,4 +146,23 @@ export default {
 
 <style scoped lang="scss">
 @import 'index.scss';
+.icon-sm {
+	height: 40rpx;
+	width: 40rpx;
+	position: relative;
+	left:-23rpx;
+	bottom:29rpx;
+
+}
+
+.icon-sms {
+	height: 40rpx;
+	width: 40rpx;
+	position: relative;
+	
+	left:-14rpx;
+	bottom:19rpx;
+	color: #21DBFF;
+
+}
 </style>

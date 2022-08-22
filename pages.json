@@ -15,8 +15,16 @@
 				"navigationBarBackgroundColor":"#34b630"
             }
             
-        }
-        ,{
+        },{
+            "path" : "pages/mine/topping/topping",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我要置顶",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#34b630"
+            }
+            
+        },{
             "path" : "pages/join/submit/submit",
             "style" :                                                                                    
             {
@@ -77,4 +85,5 @@
 		"navigationBarBackgroundColor": "#34b630",
 		"backgroundColor": "#F8F8F8"
 	}
+
 }

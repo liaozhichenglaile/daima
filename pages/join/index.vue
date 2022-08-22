@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image class="top-bg" src="https://mx.aihuobao.cn/mini/join_banner.png"></image>
+		<image class="top-bg" src="https://xcx.mengxintonggao.cn/mini/join_banner.png"></image>
 		<view class="content bg-white radius padding-xs">
 			<view class="tag-item">基础信息</view>
 			<view class="tag-item-right" v-if="auditstate !== 1 && !isfirst" @click="showtoast">
@@ -8,7 +8,7 @@
 				<text class="cuIcon-question margin-left-xs"></text>
 			</view>
 			<scroll-view scroll-y style="height:999rpx">
-				<form @submit="submit">
+				<form @submit="submit"> 
 					<view class="cu-form-group" style="padding-top: 115rpx;">
 						<view class="title">艺名</view>
 						<input placeholder="请输入艺名" v-model="stage_name" name="stage_name" />
@@ -189,17 +189,18 @@ export default {
 	watch: {
 		joinshow(val) {
 			if (val) {
-				this.setmeans(1);
+				this.setmeans();
 				this.$forceUpdate();
 			}
 		}
 	},
 	filters: {
 		auditext: value => {
-			return { 0: '待审核', 1: '审核通过', 2: '已驳回' }[value];
+			return { 0: '待审核', 1: '审核通过', 2: '已驳回',3: '未提交', }[value];
 		}
 	},
 	mounted() {
+		//this.showtoast();
 		this.setuser();
 		uni.$on('authuser', () => {
 			this.setuser();
@@ -262,6 +263,8 @@ export default {
 		showtoast() {
 			if (this.auditstate === 0) {
 				this.$util.$toast('资料已经提交，我们将会尽快审核！');
+			}else if (this.auditstate == 3) {
+				this.$util.$toast('提交失败，请重新提交');
 			} else if (this.auditstate === 2) {
 				uni.showModal({
 					title: '资料驳回',

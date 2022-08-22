@@ -5,13 +5,13 @@
 				<view class="padding">
 					<view class="grid col-1">
 						<view class="padding-sm item">
-							<view>联系电话：19817194134</view>
+							<view>联系电话/微信:18458876560</view>
 							<view class="cu-btn line-green sm radius margin-left-xs" @click="callphone">拨打</view>
 						</view>
 					</view>
 					<view class="grid col-1">
 						<view class="padding-sm item">
-							<view>联系邮箱：183584106@qq.com</view>
+							<view>联系邮箱:mengxinmodelshe@163.com</view>
 							<view class="cu-btn line-green sm radius margin-left-xs" @click="copy">复制</view>
 						</view>
 					</view>
